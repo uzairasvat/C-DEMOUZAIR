@@ -1,0 +1,8 @@
+CREATE PROCEDURE Insert_Record_Procedure
+                (
+                @Name VARCHAR(50),
+                @Price VARCHAR(50),
+                @Date DATETIME
+                )
+              AS
+                INSERT INTO Products(Name,Price,Date) Values(@Name,@Price,@Date)
