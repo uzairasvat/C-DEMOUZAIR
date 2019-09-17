@@ -1,8 +1,25 @@
-CREATE PROCEDURE Insert_Record_Procedure
-                (
-                @Name VARCHAR(50),
-                @Price VARCHAR(50),
-                @Date DATETIME
-                )
-              AS
-                INSERT INTO Products(Name,Price,Date) Values(@Name,@Price,@Date)
+CREATE PROCEDURE [dbo].[SPEmp1]
+	@OP int = 0,
+	@Eid int=0,
+	@Ename varchar(50)=null,
+        @Ecity varchar(50)=null
+AS
+BEGIN
+        if(@OP=1)
+	BEGIN
+	   INSERT INTO EmpTbl(Eid,Ename,Ecity)values(@Eid,@Ename,@Ecity); 
+	END
+	else if(@OP=2)
+	BEGIN
+	   UPDATE EmpTbl SET Ename=@Ename,Ecity=@Ecity where Eid=@Eid; 
+	END  
+	else if(@OP=3)
+	BEGIN
+	   DELETE FROM EmpTbl where Eid=@Eid; 
+	END
+	else if(@OP=4)
+	BEGIN
+	   SELECT * FROM EmpTbl; 
+	END 
+	 
+END
