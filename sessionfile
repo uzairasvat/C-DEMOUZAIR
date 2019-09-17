@@ -1,0 +1,9 @@
+//Defult.aspx.cs set session
+Session["uname"] = username.Text;
+
+//home.aspx.cs display session
+lbl1.Text = Session["uname"].ToString();
+
+//logout
+Session.RemoveAll();
+Response.Redirect("Default.aspx");
