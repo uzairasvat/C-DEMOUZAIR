@@ -1,4 +1,4 @@
-CREATE PROCEDURE [dbo].[SPEmp1]
+CREATE PROCEDURE [dbo].[SPEmp]
 	@OP int = 0,
 	@Eid int=0,
 	@Ename varchar(50)=null,
